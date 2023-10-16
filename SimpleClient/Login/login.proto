@@ -1,0 +1,16 @@
+syntax = "proto2";
+package proto;
+    
+message LoginReqProto
+{
+    required string user = 1;
+    required string password = 2; 
+    optional int32  inSeqNum = 6;
+}
+    
+message LoginRespProto
+{
+    required bool isOk =1;
+    optional string errMsg = 2;
+    optional int32  outSeqNum = 4;
+}

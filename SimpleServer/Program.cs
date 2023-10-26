@@ -13,9 +13,9 @@ DependencyManager.RegisterDependencies(serviceCollection, configuration);
 
 Console.WriteLine("Starting server:");
 var serviceProvider = serviceCollection.BuildServiceProvider();
-var simpleTcpServer = serviceProvider.GetService<SimpleTcpServer>();
+var simpleTcpServer = serviceProvider.GetService<SimpleTcpServer>()!;
 simpleTcpServer.Logger = Console.WriteLine;
-simpleTcpServer.clientRequestHandler = serviceProvider.GetService<ClientRequestHandler>();
+simpleTcpServer.clientRequestHandler = serviceProvider.GetService<ClientRequestHandler>()!;
 simpleTcpServer.Start();
 
 Console.WriteLine("Server started, Press [Escape] to stop");

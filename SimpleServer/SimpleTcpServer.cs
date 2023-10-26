@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using Common;
+using System.Net;
 using System.Net.Sockets;
 
 namespace SimpleServer
@@ -24,7 +25,7 @@ namespace SimpleServer
         public SimpleTcpServer(string ipAddress, int port)
         {
             this._port = port;
-            this._ipAddress = IPAddress.Parse(ipAddress);
+            this._ipAddress = IPAddress.Parse(IPUtils.GetIpAddress(ipAddress));
         }
 
         public void Start()
@@ -35,6 +36,7 @@ namespace SimpleServer
             }
 
             _serverSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+
             var endPoint = new IPEndPoint(_ipAddress, _port);
             _serverSocket.Bind(endPoint);
             _serverSocket.Listen(128);

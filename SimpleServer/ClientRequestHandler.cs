@@ -1,6 +1,6 @@
 ﻿using Common;
-using Common.Serialization;
 using Models.dto;
+using Serialization;
 using SimpleClient.Models;
 using SimpleServer.Authorization;
 using SimpleServer.Handlers;
@@ -40,15 +40,7 @@ public class ClientRequestHandler
 
             if(request.Type == ERequestType.Login)
             {
-                var requestWithActualData = serializeService.Deserialize<RequestData<LoginReqProto>>(data);
-                var response = new LoginHandler(authorizeService, serializeService).Handle(requestWithActualData.Data!);
-
-                Console.WriteLine($"Request handled:{requestWithActualData.Data!.InSeqNum}");
-
-                byte[] dataToSend = serializeService.Serialize(response);
-                await client.SendResponseAsync(dataToSend);
-
-                Console.WriteLine($"Response status: {response.IsOk}, {response.ErrMsg}, {response.OutSeqNum}");
+                await HandleLoginAsync(client, data);
             }
             else
             {
@@ -57,7 +49,20 @@ public class ClientRequestHandler
         }
     }
 
-    internal void Stop(CancellationToken token)
+    private async Task HandleLoginAsync(Socket client, byte[] data)
+    {
+        var requestWithActualData = serializeService.Deserialize<RequestData<LoginReqProto>>(data);
+        var response = new LoginHandler(authorizeService, serializeService).Handle(requestWithActualData.Data!);
+
+        Console.WriteLine($"Request handled:{requestWithActualData.Data!.InSeqNum}");
+
+        byte[] dataToSend = serializeService.Serialize(response);
+        await client.SendResponseAsync(dataToSend);
+
+        Console.WriteLine($"Response status: {response.IsOk}, {response.ErrMsg}, {response.OutSeqNum}");
+    }
+
+    internal void Stop()
     {
         foreach (var client in clientList)
         {

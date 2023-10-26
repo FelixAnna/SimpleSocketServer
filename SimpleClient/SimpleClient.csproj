@@ -18,6 +18,8 @@
     <ProjectReference Include="..\ClientLibrary\ClientLibrary.csproj" />
     <ProjectReference Include="..\Common\Common.csproj" />
     <ProjectReference Include="..\Models\Models.csproj" />
+    <ProjectReference Include="..\Serialization.Protobuf\Serialization.Protobuf.csproj" />
+    <ProjectReference Include="..\Serialization\Serialization.csproj" />
   </ItemGroup>
 
 </Project>

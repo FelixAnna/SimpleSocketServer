@@ -1,4 +1,4 @@
-﻿namespace Common.Serialization;
+﻿namespace Serialization;
 
 public interface ISerializeService
 {

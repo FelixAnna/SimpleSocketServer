@@ -1,5 +1,6 @@
 ﻿using ClientLibrary.Clients;
 using ClientLibrary.RPC;
+using Common;
 using Common.Serialization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,7 +16,7 @@ public static class DependencyManager
         services.AddScoped<ILoginService, LoginService>();
         services.AddScoped<IClientLoginService, ClientLoginService>();
         services.AddSingleton<ISerializeService, ProtobufSerializeService>();
-        services.AddSingleton<RpcClient, TcpClient>( provider => new(configuration.GetSection("TcpServer")["HostAddress"]!, int.Parse(configuration.GetSection("TcpServer")["Port"]!)));
+        services.AddSingleton<RpcClient, TcpClient>( provider => new(IPUtils.GetIpAddress(configuration.GetSection("TcpServer")["HostAddress"]), int.Parse(configuration.GetSection("TcpServer")["Port"]!)));
         services.AddSingleton<IRpcService, SocketService>();
 
         return services;

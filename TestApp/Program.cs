@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Models.dto;
-using SimpleClient.Extensions;
+using SimpleClient.DependencyInjections.Extensions;
 using SimpleClient.Login;
 
 Thread.Sleep(1000); //ensure for server start

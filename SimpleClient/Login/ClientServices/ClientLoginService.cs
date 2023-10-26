@@ -1,6 +1,6 @@
-﻿using ClientLibrary.Clients;
-using Models.dto;
+﻿using Models.dto;
 using Serialization;
+using SimpleClient.Clients;
 using SimpleClient.Models;
 
 namespace SimpleClient.Login.ClientServices;

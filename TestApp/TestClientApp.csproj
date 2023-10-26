@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SimpleClient.DependencyInjections\SimpleClient.DependencyInjections.csproj" />
     <ProjectReference Include="..\SimpleClient\SimpleClient.csproj" />
   </ItemGroup>
 

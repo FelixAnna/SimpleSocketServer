@@ -5,8 +5,6 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleClient", "SimpleClient\SimpleClient.csproj", "{7A4C8D27-293A-4548-BE7A-FF888F83ABC1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientLibrary", "ClientLibrary\ClientLibrary.csproj", "{F8F765D5-9045-4DC5-851F-BC153B4C5B3E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{F93116E4-7732-4EFC-B275-9784A2A9083C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleServer", "SimpleServer\SimpleServer.csproj", "{4F788BD2-FC54-4F90-96BD-B487C768E4EA}"
@@ -17,9 +15,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClientApp", "TestApp\Te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimpleClient.Tests", "SimpleClient.Tests\SimpleClient.Tests.csproj", "{0667BADF-E9FD-4B82-92CB-3571F80D42F1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization.Protobuf", "Serialization.Protobuf\Serialization.Protobuf.csproj", "{3D695C80-14FC-4199-93E4-040E949F1E0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serialization.Protobuf", "Serialization.Protobuf\Serialization.Protobuf.csproj", "{3D695C80-14FC-4199-93E4-040E949F1E0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serialization", "Serialization\Serialization.csproj", "{28E3A3B5-E0BC-475A-A32E-07C501DFF89F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Serialization", "Serialization\Serialization.csproj", "{28E3A3B5-E0BC-475A-A32E-07C501DFF89F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Serializations", "Serializations", "{74979F8C-8AC2-4A13-92F0-97CA5A47E2EE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{24D21066-FF36-48C3-A27F-669B97A6233B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{9713F4C8-A4F5-4733-943F-68116AAA083F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientLibrary.Sockets", "ClientLibrary.Sockets\ClientLibrary.Sockets.csproj", "{58E23B45-71A3-4D51-B1F2-BEA93B4532C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleClient.DependencyInjections", "SimpleClient.DependencyInjections\SimpleClient.DependencyInjections.csproj", "{53227DAC-00F9-46AA-80BA-E8494B38D783}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,10 +39,6 @@ Global
 		{7A4C8D27-293A-4548-BE7A-FF888F83ABC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A4C8D27-293A-4548-BE7A-FF888F83ABC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A4C8D27-293A-4548-BE7A-FF888F83ABC1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F8F765D5-9045-4DC5-851F-BC153B4C5B3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F8F765D5-9045-4DC5-851F-BC153B4C5B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F8F765D5-9045-4DC5-851F-BC153B4C5B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F8F765D5-9045-4DC5-851F-BC153B4C5B3E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F93116E4-7732-4EFC-B275-9784A2A9083C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F93116E4-7732-4EFC-B275-9784A2A9083C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F93116E4-7732-4EFC-B275-9784A2A9083C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -63,9 +67,27 @@ Global
 		{28E3A3B5-E0BC-475A-A32E-07C501DFF89F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28E3A3B5-E0BC-475A-A32E-07C501DFF89F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28E3A3B5-E0BC-475A-A32E-07C501DFF89F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58E23B45-71A3-4D51-B1F2-BEA93B4532C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58E23B45-71A3-4D51-B1F2-BEA93B4532C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58E23B45-71A3-4D51-B1F2-BEA93B4532C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58E23B45-71A3-4D51-B1F2-BEA93B4532C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53227DAC-00F9-46AA-80BA-E8494B38D783}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53227DAC-00F9-46AA-80BA-E8494B38D783}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53227DAC-00F9-46AA-80BA-E8494B38D783}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53227DAC-00F9-46AA-80BA-E8494B38D783}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7A4C8D27-293A-4548-BE7A-FF888F83ABC1} = {24D21066-FF36-48C3-A27F-669B97A6233B}
+		{4F788BD2-FC54-4F90-96BD-B487C768E4EA} = {9713F4C8-A4F5-4733-943F-68116AAA083F}
+		{C5D4A59E-DE45-4207-9372-185E90C28D81} = {24D21066-FF36-48C3-A27F-669B97A6233B}
+		{0667BADF-E9FD-4B82-92CB-3571F80D42F1} = {24D21066-FF36-48C3-A27F-669B97A6233B}
+		{3D695C80-14FC-4199-93E4-040E949F1E0B} = {74979F8C-8AC2-4A13-92F0-97CA5A47E2EE}
+		{28E3A3B5-E0BC-475A-A32E-07C501DFF89F} = {74979F8C-8AC2-4A13-92F0-97CA5A47E2EE}
+		{58E23B45-71A3-4D51-B1F2-BEA93B4532C6} = {24D21066-FF36-48C3-A27F-669B97A6233B}
+		{53227DAC-00F9-46AA-80BA-E8494B38D783} = {24D21066-FF36-48C3-A27F-669B97A6233B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4708F1F1-0DBA-4456-9DF6-083BBBA90984}

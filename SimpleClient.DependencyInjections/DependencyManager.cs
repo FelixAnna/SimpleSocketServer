@@ -1,14 +1,14 @@
-﻿using ClientLibrary.Clients;
-using ClientLibrary.RPC;
+﻿using ClientLibrary.Sockets;
 using Common;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Serialization;
 using Serialization.Protobuf;
+using SimpleClient.Clients;
 using SimpleClient.Login;
 using SimpleClient.Login.ClientServices;
 
-namespace SimpleClient.Extensions;
+namespace SimpleClient.DependencyInjections.Extensions;
 
 public static class DependencyManager
 {

@@ -1,7 +1,8 @@
-﻿using Common;
+﻿using SimpleClient.Clients;
 using System.Net.Sockets;
+using Common;
 
-namespace ClientLibrary.RPC;
+namespace ClientLibrary.Sockets;
 
 public sealed class SocketService : IRpcService
 {

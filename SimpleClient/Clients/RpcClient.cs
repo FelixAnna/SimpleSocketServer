@@ -1,4 +1,4 @@
-﻿namespace ClientLibrary.Clients;
+﻿namespace SimpleClient.Clients;
 
 public abstract class RpcClient : IDisposable
 {

@@ -1,6 +1,7 @@
-﻿using Common.Serialization;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serialization;
+using Serialization.Protobuf;
 using SimpleServer.Authorization;
 using SimpleServer.Handlers;
 

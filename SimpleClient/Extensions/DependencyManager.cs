@@ -1,9 +1,10 @@
 ﻿using ClientLibrary.Clients;
 using ClientLibrary.RPC;
 using Common;
-using Common.Serialization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Serialization;
+using Serialization.Protobuf;
 using SimpleClient.Login;
 using SimpleClient.Login.ClientServices;
 

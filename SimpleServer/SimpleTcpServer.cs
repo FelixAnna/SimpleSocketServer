@@ -103,7 +103,7 @@ namespace SimpleServer
                 }
             }
 
-            clientRequestHandler.Stop(_token);
+            clientRequestHandler.Stop();
         }
 
     }

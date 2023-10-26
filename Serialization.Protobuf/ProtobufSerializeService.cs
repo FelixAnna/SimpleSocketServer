@@ -1,4 +1,4 @@
-﻿namespace Common.Serialization;
+﻿namespace Serialization.Protobuf;
 
 public class ProtobufSerializeService : ISerializeService
 {
